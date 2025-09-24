@@ -7,7 +7,7 @@ WITH base_transactions AS (
         type,
         amount
     FROM
-        {{ source('your_source_schema', 'transactions') }}
+        {{ source('discord', 'transactions') }}
 )
 
 SELECT
@@ -21,4 +21,5 @@ FROM
 GROUP BY
     1, 2
 ORDER BY
+
     1, 2
