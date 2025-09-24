@@ -6,7 +6,7 @@ WITH ranked_deposits AS (
         amount,
         ROW_NUMBER() OVER(PARTITION BY player_id ORDER BY amount DESC) as deposit_rank
     FROM
-        {{ source('your_source_schema', 'transactions') }}
+        {{ source('discord', 'transactions') }}
     WHERE
         type = 'Deposit'
 )
@@ -23,4 +23,5 @@ WHERE
 GROUP BY
     1
 ORDER BY
+
     1
