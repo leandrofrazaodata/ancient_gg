@@ -22,7 +22,7 @@ The `data_generator/generate_data.py` script extends the sample data to 1000 row
 
 ### **Part 2: dbt Models**
 
-The dbt models transform the raw data to fulfill specific analytical requirements[cite: 24].
+The dbt models transform the raw data to fulfill specific analytical requirements.
 
 **Models:**
 * `daily_player_transactions`: Creates one row per player daily, showing total deposits and withdrawals (with withdrawals as negative values).
@@ -30,13 +30,13 @@ The dbt models transform the raw data to fulfill specific analytical requirement
 * `player_top_three_deposits`: Shows one row per player with their three largest deposit amounts in separate columns.
 
 **Setup & Execution:**
-1.  **Install dbt:** You will need `dbt-core` and the specific adapter for your data warehouse (e.g., `dbt-postgres`, `dbt-snowflake`, `dbt-redshift`).
+1.  **Install dbt:** You will need `dbt-core` and the specific adapter for the data warehouse (e.g., `dbt-postgres`, `dbt-snowflake`, `dbt-redshift`).
     ```bash
-    pip install dbt-core dbt-<your-adapter>
+    pip install dbt-core dbt-<adapter>
     ```
-2.  **Configure Profile:** Create a `profiles.yml` file in your `~/.dbt/` directory. This file contains the connection details for your data warehouse. Refer to the official dbt documentation for instructions specific to your adapter. The profile name should be `gaming_analytics_profile` to match the `dbt_project.yml` file.
+2.  **Configure Profile:** Create a `profiles.yml` file in `~/.dbt/` directory. This file contains the connection details for data warehouse. Refer to the official dbt documentation for instructions specific to the adapter. The profile name should be `gaming_analytics_profile` to match the `dbt_project.yml` file.
 
-3.  **Load Data:** Upload the three CSVs generated in Part 1 to your data warehouse. Ensure these tables are configured as sources for your dbt project.
+3.  **Load Data:** Upload the three CSVs generated in Part 1 to data warehouse. Ensure these tables are configured as sources for dbt project.
 
 4.  **Run Models:** Navigate to the `dbt_project` directory and run the models:
     ```bash
@@ -45,7 +45,7 @@ The dbt models transform the raw data to fulfill specific analytical requirement
     ```
 5.  **Test Models (Recommended):**
     ```bash
-    # This command runs any tests defined in your project
+    # This command runs any tests defined in the project
     dbt test
     ```
 
@@ -54,5 +54,6 @@ The dbt models transform the raw data to fulfill specific analytical requirement
 ### **Part 3: Airflow Orchestration (Bonus)**
 
 The `airflow_dag/dbt_dag.py` file provides a simple Airflow DAG to orchestrate the dbt pipeline for daily refreshes.
+
 
 
