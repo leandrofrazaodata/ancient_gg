@@ -1,28 +1,7 @@
 # Data Engineer - Ancient gg
 
 This repository contains the solution for the Data Engineer Technical Assessment. The project involves data cleaning, synthetic data generation, data transformation using dbt, and orchestration with Airflow[cite: 1, 2, 29].
-
-## Project Structure
-
-|-- data_generator/
-|   |-- generate_data.py         
-|
-|-- dbt_project/
-|   |-- models/
-|   |   |-- core/
-|   |   |   |-- daily_player_transactions.sql
-|   |   |   |-- agg_discord_deposits_by_country.sql
-|   |   |   |-- player_top_three_deposits.sql
-|   |-- dbt_project.yml       
-|   |-- profiles.yml          
-|
-|-- airflow_dag/
-|   |-- dbt_dag.py               
-|
-|-- README.md                    
-
-
-
+                  
 ### **Part 1: Data Generation**
 
 The `data_generator/generate_data.py` script extends the sample data to 1000 rows while adhering to the business rules outlined in the assessment[cite: 14, 22].
@@ -75,3 +54,4 @@ The dbt models transform the raw data to fulfill specific analytical requirement
 ### **Part 3: Airflow Orchestration (Bonus)**
 
 The `airflow_dag/dbt_dag.py` file provides a simple Airflow DAG to orchestrate the dbt pipeline for daily refreshes.
+
