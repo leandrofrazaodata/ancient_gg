@@ -1,0 +1,13 @@
+gaming_analytics_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service_account
+      project: gcp-project
+      dataset: dbt-gaming_analytics
+      threads: 4
+      #keyfile:
+      timeout_seconds: 300
+      location: US
+      priority: interactive
