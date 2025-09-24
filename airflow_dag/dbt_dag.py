@@ -10,7 +10,7 @@ DBT_PROJECT_DIR = '/home/airflow/dags/dbt_project'
     schedule_interval='@daily',
     catchup=False,
     tags=['dbt'],
-    description='A simple DAG to run dbt models daily'
+    description='DAG to run dbt models daily'
 )
 def dbt_daily_run():
     # run all dbt models
@@ -28,4 +28,5 @@ def dbt_daily_run():
     dbt_run >> dbt_test
 
 # Instantiate the DAG
+
 dbt_daily_run_dag = dbt_daily_run()
