@@ -1,10 +1,10 @@
 # Data Engineer - Ancient gg
 
-This repository contains the solution for the Data Engineer Technical Assessment. The project involves data cleaning, synthetic data generation, data transformation using dbt, and orchestration with Airflow[cite: 1, 2, 29].
+This repository contains the solution for the Data Engineer Technical Assessment. The project involves data cleaning, synthetic data generation, data transformation using dbt, and orchestration with Airflow.
                   
 ### **Part 1: Data Generation**
 
-The `data_generator/generate_data.py` script extends the sample data to 1000 rows while adhering to the business rules outlined in the assessment[cite: 14, 22].
+The `data_generator/generate_data.py` script extends the sample data to 1000 rows while adhering to the business rules outlined in the assessment.
 
 **To run the script:**
 1.  Navigate to the `data_generator` directory.
@@ -16,7 +16,7 @@ The `data_generator/generate_data.py` script extends the sample data to 1000 row
     ```bash
     python generate_data.py
     ```
-    This will create three CSV files in the directory: `transactions.csv`, `players.csv`, and `affiliates.csv`[cite: 10].
+    This will create three CSV files in the directory: `transactions.csv`, `players.csv`, and `affiliates.csv`.
 
 ---
 
@@ -25,9 +25,9 @@ The `data_generator/generate_data.py` script extends the sample data to 1000 row
 The dbt models transform the raw data to fulfill specific analytical requirements[cite: 24].
 
 **Models:**
-* `daily_player_transactions`: Creates one row per player daily, showing total deposits and withdrawals (with withdrawals as negative values)[cite: 25, 26].
-* `agg_discord_deposits_by_country`: Calculates the sum and count of deposits by country for KYC-approved players from the 'Discord' affiliate origin[cite: 27].
-* `player_top_three_deposits`: Shows one row per player with their three largest deposit amounts in separate columns[cite: 28].
+* `daily_player_transactions`: Creates one row per player daily, showing total deposits and withdrawals (with withdrawals as negative values).
+* `agg_discord_deposits_by_country`: Calculates the sum and count of deposits by country for KYC-approved players from the 'Discord' affiliate origin.
+* `player_top_three_deposits`: Shows one row per player with their three largest deposit amounts in separate columns.
 
 **Setup & Execution:**
 1.  **Install dbt:** You will need `dbt-core` and the specific adapter for your data warehouse (e.g., `dbt-postgres`, `dbt-snowflake`, `dbt-redshift`).
@@ -54,4 +54,5 @@ The dbt models transform the raw data to fulfill specific analytical requirement
 ### **Part 3: Airflow Orchestration (Bonus)**
 
 The `airflow_dag/dbt_dag.py` file provides a simple Airflow DAG to orchestrate the dbt pipeline for daily refreshes.
+
 
